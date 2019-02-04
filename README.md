@@ -21,3 +21,5 @@ example of use
                 
                 
 More examples in [routes/web.php](https://github.com/Eugene-Melbourne/LaravelCsvGenerator/blob/master/routes/web.php)
+
+Tested with Laravel 5.7
