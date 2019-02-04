@@ -8,7 +8,7 @@ Route::get('csv', function () {
     ];
     $headers = ['one', 'two'];
 
-    return (new \App\Services\Generators\CsvGenerator())
+    return (new \App\Services\Generators\LaravelCsvGenerator())
         ->setHeaders($headers)
         ->setData($data)
         ->renderStream();
@@ -31,7 +31,7 @@ Route::get('csv-string', function () {
     ];
     $headers = ['one', 'two'];
 
-    $str = (new \App\Services\Generators\CsvGenerator())
+    $str = (new \App\Services\Generators\LaravelCsvGenerator())
     ->setHeaders($headers)
     ->setData($data)
     ->toString();
