@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Generators;
+namespace LaravelCsvGenerator;
 
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use function response;
