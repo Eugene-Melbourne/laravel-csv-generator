@@ -6,7 +6,7 @@ It is not a package, it is a one file [LaravelCsvGenerator.php](https://github.c
 that you can copy to your project, in `\app\Services\Generators\` folder.
 
 
-example of use in your controller like so
+example of use in your controller 
 
     class MyController extends Controller
     {
