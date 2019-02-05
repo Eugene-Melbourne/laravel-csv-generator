@@ -8,9 +8,9 @@ Route::get('csv', function () {
         [3, "hi, there"],
     ];
     $headers = ['one', 'two'];
+    $data    = array_merge([$headers], $data);
 
     return (new \LaravelCsvGenerator\LaravelCsvGenerator())
-        ->setHeaders($headers)
         ->setData($data)
         ->renderStream();
 });
@@ -31,9 +31,9 @@ Route::get('csv-string', function () {
         [3, "hi, there"],
     ];
     $headers = ['one', 'two'];
+    $data    = array_merge([$headers], $data);
 
     $str = (new \LaravelCsvGenerator\LaravelCsvGenerator())
-    ->setHeaders($headers)
     ->setData($data)
     ->toString();
 
