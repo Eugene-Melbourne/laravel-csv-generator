@@ -16,17 +16,8 @@ class LaravelCsvGenerator
         "Expires"             => "0"
     ];
 
-    protected $headers     = null;
     protected $data        = null;
     protected $httpHeaders = null;
-
-
-    public function setHeaders(array $headers): self
-    {
-        $this->headers = $headers;
-
-        return $this;
-    }
 
 
     public function setData(array $data): self
@@ -53,8 +44,7 @@ class LaravelCsvGenerator
         return response()->streamDownload(
                 function (): void {
                 // Output the generated Csv to Browser
-                $file = fopen('php://output', 'w');
-                fputcsv($file, $this->headers);
+                $file = fopen('php://output', 'w');                
                 foreach ($this->data as $record) {
                     fputcsv($file, $record);
                 }
@@ -65,7 +55,6 @@ class LaravelCsvGenerator
 
     public function toString(): string
     {
-        $res = implode(',', $this->headers) . "\n";
         foreach ($this->data as $record) {
             $res .= '"' . implode('","', $record) . '"' . "\n";
         }
