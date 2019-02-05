@@ -16,9 +16,9 @@ class LaravelCsvGenerator
         "Expires"             => "0"
     ];
 
-    private $headers     = null;
-    private $data        = null;
-    private $httpHeaders = null;
+    protected $headers     = null;
+    protected $data        = null;
+    protected $httpHeaders = null;
 
 
     public function setHeaders(array $headers): self
