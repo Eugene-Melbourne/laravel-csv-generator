@@ -1,5 +1,5 @@
 # LaravelCsvGenerator
-makes *.csv files from arrays
+helps download *.csv files made dynamically from arrays
 
 It is not a package, it is a one file [LaravelCsvGenerator.php](https://github.com/Eugene-Melbourne/LaravelCsvGenerator/blob/master/LaravelCsvGenerator.php) 
 
