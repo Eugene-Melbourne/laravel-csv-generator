@@ -13,14 +13,14 @@ example of use in your controller
 
         public function getCsv(): \Symfony\Component\HttpFoundation\StreamedResponse
         {
-            $data    = [
+            $data = [
                     [1, 2.1],
                     [3, "hi, there"],
                 ];
             $headers = ['one', 'two'];
+            $data = array_merge([$headers], $data);
 
-            return (new \LaravelCsvGenerator\LaravelCsvGenerator())
-                    ->setHeaders($headers)
+            return (new \LaravelCsvGenerator\LaravelCsvGenerator())                    
                     ->setData($data)
                     ->renderStream();
         }
