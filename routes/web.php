@@ -1,5 +1,6 @@
 // example and test
 
+// basic - stream csv to the user
 Route::get('csv', function () {
 
     $data    = [
@@ -8,13 +9,13 @@ Route::get('csv', function () {
     ];
     $headers = ['one', 'two'];
 
-    return (new \App\Services\Generators\LaravelCsvGenerator())
+    return (new \LaravelCsvGenerator\LaravelCsvGenerator())
         ->setHeaders($headers)
         ->setData($data)
         ->renderStream();
 });
 
-
+// make csv string and then stream it to the user
 Route::get('csv-string', function () {
 
     $httpHeaders = array(
@@ -31,7 +32,7 @@ Route::get('csv-string', function () {
     ];
     $headers = ['one', 'two'];
 
-    $str = (new \App\Services\Generators\LaravelCsvGenerator())
+    $str = (new \LaravelCsvGenerator\LaravelCsvGenerator())
     ->setHeaders($headers)
     ->setData($data)
     ->toString();
