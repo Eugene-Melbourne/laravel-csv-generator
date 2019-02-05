@@ -2,11 +2,10 @@
 
 Helps download *.csv files from your laravel project.
 
-It is not a package, it is a one file [LaravelCsvGenerator.php](https://github.com/Eugene-Melbourne/LaravelCsvGenerator/blob/master/src/LaravelCsvGenerator.php) 
+Installation
 
-that you can copy to your project, in `\app\Services\Generators\` folder.
-
-
+    $ composer require  eugene-melbourne/laravel-csv-generator
+    
 example of use in your controller 
 
     class MyController extends Controller
@@ -20,14 +19,18 @@ example of use in your controller
                 ];
             $headers = ['one', 'two'];
 
-            return (new \App\Services\Generators\CsvGenerator())
+            return (new \LaravelCsvGenerator\LaravelCsvGenerator())
                     ->setHeaders($headers)
                     ->setData($data)
                     ->renderStream();
         }
      
-                
-                
+set your own http headers with `->setHttpHeaders(array $httpHeaders)`
+
+get csv as string `->toString()`
+              
+              
+              
 More examples in [routes/web.php](https://github.com/Eugene-Melbourne/LaravelCsvGenerator/blob/master/routes/web.php)
 
 Tested with Laravel 5.7
