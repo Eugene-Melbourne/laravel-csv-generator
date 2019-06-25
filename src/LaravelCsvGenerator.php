@@ -55,6 +55,8 @@ class LaravelCsvGenerator
 
     public function toString(): string
     {
+        $res = '';
+        
         foreach ($this->data as $record) {
             $res .= '"' . implode('","', $record) . '"' . "\n";
         }
