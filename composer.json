@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "LaravelCsvGenerator//": "src"
+            "LaravelCsvGenerator\\": "src"
         }
     }
 }
